@@ -38,13 +38,13 @@ public class Queens {
         System.out.println();
     }
 
-    public static void enumerate(int N) {
+    public static void calculate(int N) {
         int[] a = new int[N];
 
-        enumerate(a, 0);
+        calculate(a, 0);
     }
 
-    public static boolean enumerate(int[] q, int n) {
+    public static boolean calculate(int[] q, int n) {
         int N = q.length;
 
         if (n == N) {
@@ -56,7 +56,7 @@ public class Queens {
                 q[n] = i;
 
                 if (isConsistent(q, n)) {
-                    if (enumerate(q, n + 1)) {
+                    if (calculate(q, n + 1)) {
                         return true;
                     }
                 }
@@ -68,17 +68,25 @@ public class Queens {
 
 
     public static void main(String[] args) {
-        enumerate(new int[] {0, 0, 0, 0, 0, 0, 0, 0}, 0);
+//        calculate(new int[]{0, 0, 0, 0, 0, 0, 0, 0}, 0);
+//
+//        calculate(new int[]{5, 0, 0, 0, 0, 0, 0, 0}, 1);
+//
+//        calculate(new int[]{5, 3, 0, 0, 0, 0, 0, 0}, 2);
+//
+//        calculate(new int[]{5, 3, 0, 0, 0, 0, 0, 0, 5, 3, 0, 0, 0, 0, 0, 0}, 0);
+//
+//        calculate(new int[]{5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 0);
+//
+//        calculate(new int[]{0, 0, 0, 0, 0, 0}, 0);
+//
+//        calculate(new int[]{0, 0, 0, 0}, 0);
+//
+//        calculate(new int[]{0}, 0);
 
-        enumerate(new int[] {5, 0, 0, 0, 0, 0, 0, 0}, 1);
+        calculate(1);
 
-        enumerate(new int[] {5, 3, 0, 0, 0, 0, 0, 0}, 2);
-
-        enumerate(new int[] {5, 3, 0, 0, 0, 0, 0, 0, 5, 3, 0, 0, 0, 0, 0, 0}, 0);
-
-        enumerate(new int[] {0, 0, 0, 0, 0, 0}, 0);
-
-        enumerate(new int[] {0, 0}, 0);
+        calculate(8);
     }
 
 }
