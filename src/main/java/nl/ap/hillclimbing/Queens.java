@@ -26,7 +26,7 @@ public class Queens {
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
                 if (q[i] == j) {
-                    System.out.print("Q  ");
+                    System.out.print((char)27 + "[31mQ  " + (char)27 + "[0m");
                 } else {
                     System.out.print("*  ");
                 }
